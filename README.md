@@ -262,3 +262,8 @@ This project is released under the MIT License and is intended strictly for acad
 ## ✅ Final Statement
 
 This repository fully satisfies all requirements of **Task 1** as defined by the **Future Interns Machine Learning Internship** and represents a professional, enterprise-ready sales forecasting system.
+
+---
+
+👨‍💻 Developed by
+M V Karthikeya
