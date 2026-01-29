@@ -1,0 +1,134 @@
+/* ===============================
+   GLOBAL STYLES
+================================ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    color: #2c3e50;
+}
+
+/* ===============================
+   MAIN CONTAINER
+================================ */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 35px 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #1f2937;
+}
+
+/* ===============================
+   KPI CARDS
+================================ */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    margin-bottom: 35px;
+}
+
+.kpi-card {
+    background: #f9fafb;
+    padding: 22px 24px;
+    border-radius: 6px;
+    border-left: 5px solid #3b82f6;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.07);
+    transition: transform 0.2s ease;
+}
+
+.kpi-card:hover {
+    transform: translateY(-3px);
+}
+
+.kpi-card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #6b7280;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.kpi-card p {
+    font-size: 34px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 6px;
+}
+
+.kpi-card span {
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+/* ===============================
+   CHART CONTAINER
+================================ */
+.chart-box {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ===============================
+   BUTTONS & ACTIONS
+================================ */
+.actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 22px;
+    background-color: #3b82f6;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #2563eb;
+}
+
+.btn.secondary {
+    background-color: #6b7280;
+}
+
+.btn.secondary:hover {
+    background-color: #4b5563;
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================ */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .kpi-card p {
+        font-size: 28px;
+    }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enterprise Sales Forecast Dashboard</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>📊 Sales & Demand Forecast Dashboard</h1>
+
+    <!-- KPI CARDS -->
+    <div class="kpi-grid">
+        <div class="kpi-card">
+            <h3>RMSE</h3>
+            <p>{{ rmse }}</p>
+            <span>Lower is better</span>
+        </div>
+
+        <div class="kpi-card">
+            <h3>MAPE</h3>
+            <p>{{ mape }}%</p>
+            <span>Forecast Accuracy</span>
+        </div>
+
+        <div class="kpi-card">
+            <h3>Forecast Horizon</h3>
+            <p>6 Months</p>
+            <span>Planning Window</span>
+        </div>
+    </div>
+
+    <!-- CHART -->
+    <div class="chart-box">
+        <canvas id="salesChart"></canvas>
+    </div>
+
+    <!-- ACTION BUTTONS -->
+    <div class="actions">
+        <a href="/insights" class="btn">📌 Business Insights</a>
+        <a href="/" class="btn secondary">🏠 Home</a>
+    </div>
+</div>
+
+<script>
+    const ctx = document.getElementById('salesChart').getContext('2d');
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: {{ chart_labels | tojson }},
+            datasets: [
+                {
+                    label: 'Historical Sales',
+                    data: {{ chart_historical | tojson }},
+                    borderWidth: 3,
+                    tension: 0.3
+                },
+                {
+                    label: 'Forecasted Sales',
+                    data: {{ chart_forecast | tojson }},
+                    borderDash: [6, 6],
+                    borderWidth: 3,
+                    tension: 0.3
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'top' },
+                title: {
+                    display: true,
+                    text: 'Sales Demand Forecast'
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: false
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
