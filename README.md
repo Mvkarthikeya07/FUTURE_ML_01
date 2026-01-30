@@ -1,4 +1,4 @@
-# 📊 Sales & Demand Forecasting for Businesses
+# 📊 Time-Series Modeling for Sales and Demand Forecasting in Business Decision Support Systems
 
 ---
 
